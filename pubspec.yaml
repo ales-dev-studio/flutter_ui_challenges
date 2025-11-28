@@ -12,10 +12,11 @@ dependencies:
   flutter:
     sdk: flutter
 
-  readmore: ^3.0.0
   flutter_gen: ^5.10.0
   flutter_svg: ^2.2.2
   google_fonts: ^6.2.1
+  salomon_bottom_bar: ^3.3.2
+  carousel_slider: ^5.0.0
 
 dev_dependencies:
   build_runner: ^2.4.15

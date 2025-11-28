@@ -97,6 +97,14 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "8.12.1"
+  carousel_slider:
+    dependency: "direct main"
+    description:
+      name: carousel_slider
+      sha256: bcc61735345c9ab5cb81073896579e735f81e35fd588907a393143ea986be8ff
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "5.1.1"
   characters:
     dependency: transitive
     description:
@@ -547,14 +555,14 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "1.5.0"
-  readmore:
+  salomon_bottom_bar:
     dependency: "direct main"
     description:
-      name: readmore
-      sha256: e8fca2bd397b86342483b409e2ec26f06560a5963aceaa39b27f30722b506187
+      name: salomon_bottom_bar
+      sha256: e20abf2e449749432223a8b4e6647c212eef6c2b638e0ed8cc92eff9529c2b48
       url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "3.0.0"
+    version: "3.3.2"
   shelf:
     dependency: transitive
     description:
