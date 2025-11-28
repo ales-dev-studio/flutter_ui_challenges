@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_ui_challenges/coffee_app/screens/splash_screen.dart';
+import 'package:flutter_ui_challenges/utils/app_navigator.dart';
 import 'package:flutter_ui_challenges/utils/dimens.dart';
 import 'package:flutter_ui_challenges/widgets/bordered_container.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -18,6 +20,7 @@ class MyApp extends StatelessWidget {
         textTheme: GoogleFonts.almaraiTextTheme(),
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
+      debugShowCheckedModeBanner: false,
       home: const ProjectsListScreen(),
     );
   }
@@ -37,7 +40,9 @@ class ProjectsListScreen extends StatelessWidget {
             BorderedContainer(
               child: InkWell(
                 borderRadius: BorderRadius.circular(Dimens.corners),
-                onTap: () {},
+                onTap: () {
+                  appPush(context, SplashScreen());
+                },
                 child: ListTile(
                   title: Text('Coffee App UI'),
                   leading: Icon(Icons.coffee_outlined),

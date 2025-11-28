@@ -34,5 +34,5 @@ flutter:
 
   assets:
     - assets/images/
-    - assets/images/coffee app
+    - assets/images/coffee_app/
     - assets/icons/
