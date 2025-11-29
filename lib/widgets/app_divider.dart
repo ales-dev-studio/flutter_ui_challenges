@@ -18,7 +18,7 @@ class AppDivider extends StatelessWidget {
   Widget build(BuildContext context) {
     return Divider(
       height: height ?? 0,
-      color: Colors.grey,
+      color: Colors.grey.withValues(alpha: 0.5),
       thickness: thickness,
       indent: indent,
       endIndent: endIndent,
