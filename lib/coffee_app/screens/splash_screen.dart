@@ -1,5 +1,6 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_ui_challenges/coffee_app/screens/home_screen.dart';
 import 'package:flutter_ui_challenges/utils/app_navigator.dart';
 import 'package:flutter_ui_challenges/utils/dimens.dart';
@@ -8,8 +9,33 @@ import 'package:flutter_ui_challenges/widgets/app_scaffold.dart';
 
 import '../../utils/gen/assets.gen.dart';
 
-class SplashScreen extends StatelessWidget {
+class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
+
+  @override
+  State<SplashScreen> createState() => _SplashScreenState();
+}
+
+class _SplashScreenState extends State<SplashScreen> {
+  void setFullscreen() {
+    SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersive);
+  }
+
+  void exitFullscreen() {
+    SystemChrome.setEnabledSystemUIMode(SystemUiMode.edgeToEdge);
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    setFullscreen();
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+    exitFullscreen();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -63,6 +89,7 @@ class SplashScreen extends StatelessWidget {
                 padding: EdgeInsets.only(bottom: Dimens.largePadding),
                 child: ElevatedButton(
                   onPressed: () {
+                    exitFullscreen();
                     appPush(context, HomeScreen());
                   },
                   style: ElevatedButton.styleFrom(
