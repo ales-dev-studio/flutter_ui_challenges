@@ -1,5 +1,7 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_ui_challenges/coffee_app/screens/home_screen.dart';
+import 'package:flutter_ui_challenges/utils/app_navigator.dart';
 import 'package:flutter_ui_challenges/utils/dimens.dart';
 import 'package:flutter_ui_challenges/utils/sized_context.dart';
 import 'package:flutter_ui_challenges/widgets/app_scaffold.dart';
@@ -60,7 +62,9 @@ class SplashScreen extends StatelessWidget {
               child: Padding(
                 padding: EdgeInsets.only(bottom: Dimens.largePadding),
                 child: ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    appPush(context, HomeScreen());
+                  },
                   style: ElevatedButton.styleFrom(
                     fixedSize: const Size(214, 54),
                     shape: RoundedRectangleBorder(
