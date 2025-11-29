@@ -19,6 +19,11 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         textTheme: GoogleFonts.almaraiTextTheme(),
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        appBarTheme: AppBarTheme(
+          backgroundColor: Colors.white,
+          surfaceTintColor: Colors.transparent,
+        ),
+        scaffoldBackgroundColor: Colors.white,
       ),
       debugShowCheckedModeBanner: false,
       home: const ProjectsListScreen(),
