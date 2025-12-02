@@ -1,4 +1,4 @@
-# Flutter UI Challenges and Mini Projects
+# Flutter UI Challenges and Mini Projects [![Project Status](https://img.shields.io/badge/status-under%20development-orange.svg)]()
 
 ## Getting Started  
 ```bash
