@@ -1,16 +1,21 @@
-# flutter_ui_challenges
+# Flutter UI Challenges and Mini Projects
 
-A new Flutter project.
+## Getting Started  
+```bash
+git clone https://github.com/ales-dev-studio/flutter_ui_challenges.git
+cd flutter_ui_challenges
+flutter pub get
+flutter run
+```
 
-## Getting Started
+## #1 ☕ Coffee App UI
 
-This project is a starting point for a Flutter application.
+![Demo](https://github.com/ales-dev-studio/flutter_ui_challenges/blob/main/assets/demos/Coffee%20App%20Demo.jpg)
 
-A few resources to get you started if this is your first Flutter project:
+A beautifully designed Coffee Shop App UI built using Flutter.
+This project includes clean, reusable widgets and multiple screens such as:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+* Splash screen
+* Home Screen
+* Favorites Screen
+* Profile Screen
