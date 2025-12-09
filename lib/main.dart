@@ -46,21 +46,53 @@ class ProjectsListScreen extends StatelessWidget {
       body: SingleChildScrollView(
         padding: EdgeInsets.all(Dimens.largePadding),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          spacing: Dimens.largePadding,
           children: [
-            BorderedContainer(
-              child: InkWell(
-                borderRadius: BorderRadius.circular(Dimens.corners),
-                onTap: () {
-                  appPush(context, SplashScreen());
-                },
-                child: ListTile(
-                  title: Text('Coffee App UI'),
-                  leading: Icon(Icons.coffee_outlined),
-                ),
-              ),
+            Text(
+              'Projects',
+              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+            ),
+            _ListTile(
+              title: 'Coffee App',
+              onTap: () {
+                appPush(context, SplashScreen());
+              },
+              icon: Icons.coffee_outlined,
+            ),
+
+            Text(
+              'Screens',
+              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+            ),
+            _ListTile(
+              title: 'Wallet screen with Slivers',
+              onTap: () {
+                appPush(context, SplashScreen());
+              },
+              icon: Icons.wallet,
             ),
           ],
         ),
+      ),
+    );
+  }
+}
+
+class _ListTile extends StatelessWidget {
+  const _ListTile({required this.title, this.onTap, this.icon});
+
+  final String title;
+  final GestureTapCallback? onTap;
+  final IconData? icon;
+
+  @override
+  Widget build(BuildContext context) {
+    return BorderedContainer(
+      child: InkWell(
+        borderRadius: BorderRadius.circular(Dimens.corners),
+        onTap: onTap,
+        child: ListTile(title: Text(title), leading: Icon(icon)),
       ),
     );
   }
