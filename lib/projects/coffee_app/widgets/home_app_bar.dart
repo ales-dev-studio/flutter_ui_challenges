@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
+import '../../../utils/dimens.dart';
+import '../../../utils/gen/assets.gen.dart';
 import '../colors/colors.dart';
 import 'package:flutter_ui_challenges/widgets/app_bordered_icon_button.dart';
 import 'package:flutter_ui_challenges/widgets/user_profile_image_widget.dart';
 
-import '../../utils/dimens.dart';
-import '../../utils/gen/assets.gen.dart';
 import 'app_search_bar.dart';
 
 class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {

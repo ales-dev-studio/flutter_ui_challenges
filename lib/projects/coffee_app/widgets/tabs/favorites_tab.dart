@@ -1,13 +1,13 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_ui_challenges/coffee_app/colors/colors.dart';
 import 'package:flutter_ui_challenges/utils/sized_context.dart';
 import 'package:flutter_ui_challenges/widgets/app_scaffold.dart';
 
-import '../../../utils/dimens.dart';
-import '../../../utils/gen/assets.gen.dart';
-import '../../../widgets/app_icon_buttons.dart';
-import '../../../widgets/shaded_container.dart';
+import '../../../../utils/dimens.dart';
+import '../../../../utils/gen/assets.gen.dart';
+import '../../../../widgets/app_icon_buttons.dart';
+import '../../../../widgets/shaded_container.dart';
+import '../../colors/colors.dart';
 
 class FavoritesTab extends StatelessWidget {
   const FavoritesTab({super.key});

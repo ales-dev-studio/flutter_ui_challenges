@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import '../../utils/dimens.dart';
-import '../../utils/gen/assets.gen.dart';
-import '../../widgets/app_svg_viewer.dart';
+import '../../../utils/dimens.dart';
+import '../../../utils/gen/assets.gen.dart';
+import '../../../widgets/app_svg_viewer.dart';
 import '../colors/colors.dart';
 
 class AppSearchBar extends StatelessWidget {

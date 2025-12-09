@@ -1,11 +1,11 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_ui_challenges/coffee_app/widgets/rate_widget.dart';
+import 'package:flutter_ui_challenges/projects/coffee_app/widgets/rate_widget.dart';
 import 'package:flutter_ui_challenges/utils/sized_context.dart';
 
-import '../../utils/dimens.dart';
-import '../../utils/gen/assets.gen.dart';
-import '../../widgets/app_svg_viewer.dart';
+import '../../../utils/dimens.dart';
+import '../../../utils/gen/assets.gen.dart';
+import '../../../widgets/app_svg_viewer.dart';
 import '../colors/colors.dart';
 
 class ProductsList extends StatefulWidget {

@@ -1,13 +1,14 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_ui_challenges/coffee_app/screens/home_screen.dart';
 import 'package:flutter_ui_challenges/utils/app_navigator.dart';
 import 'package:flutter_ui_challenges/utils/dimens.dart';
 import 'package:flutter_ui_challenges/utils/sized_context.dart';
 import 'package:flutter_ui_challenges/widgets/app_scaffold.dart';
 
-import '../../utils/gen/assets.gen.dart';
+import '../../../utils/gen/assets.gen.dart';
+import 'home_screen.dart';
+
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -28,7 +29,7 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     super.initState();
-    setFullscreen();
+     setFullscreen();
   }
 
   @override
@@ -48,7 +49,9 @@ class _SplashScreenState extends State<SplashScreen> {
           SizedBox(
             width: context.widthPx,
             height: context.heightPx,
-            child: Assets.images.coffeeApp.coffeeBg.image(),
+            child: Assets.images.coffeeApp.coffeeBg.image(
+              fit: BoxFit.fitWidth,
+            ),
           ),
           Container(
             width: context.widthPx,

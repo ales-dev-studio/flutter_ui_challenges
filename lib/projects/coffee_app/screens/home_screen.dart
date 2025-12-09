@@ -1,15 +1,16 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_ui_challenges/coffee_app/colors/colors.dart';
-import 'package:flutter_ui_challenges/coffee_app/widgets/tabs/favorites_tab.dart';
-import 'package:flutter_ui_challenges/coffee_app/widgets/tabs/home_tab.dart';
-import 'package:flutter_ui_challenges/coffee_app/widgets/tabs/profile_tab.dart';
 import 'package:flutter_ui_challenges/utils/dimens.dart';
 import 'package:flutter_ui_challenges/widgets/app_scaffold.dart';
 import 'package:salomon_bottom_bar/salomon_bottom_bar.dart';
 
-import '../../utils/gen/assets.gen.dart';
-import '../../widgets/app_svg_viewer.dart';
+import '../../../utils/gen/assets.gen.dart';
+import '../../../widgets/app_svg_viewer.dart';
+import '../colors/colors.dart';
+import '../widgets/tabs/favorites_tab.dart';
+import '../widgets/tabs/home_tab.dart';
+import '../widgets/tabs/profile_tab.dart';
+
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});

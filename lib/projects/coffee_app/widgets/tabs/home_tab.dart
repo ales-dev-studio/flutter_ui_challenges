@@ -1,13 +1,13 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_ui_challenges/coffee_app/widgets/coffee_types_list.dart';
-import 'package:flutter_ui_challenges/coffee_app/widgets/home_app_bar.dart';
-import 'package:flutter_ui_challenges/coffee_app/widgets/title_widget.dart';
 import 'package:flutter_ui_challenges/utils/dimens.dart';
 import 'package:flutter_ui_challenges/widgets/app_scaffold.dart';
 
 import '../categories_widget.dart';
+import '../coffee_types_list.dart';
+import '../home_app_bar.dart';
 import '../products_list.dart';
+import '../title_widget.dart';
 
 class HomeTab extends StatelessWidget {
   const HomeTab({super.key});

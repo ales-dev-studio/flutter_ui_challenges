@@ -1,14 +1,14 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_ui_challenges/coffee_app/colors/colors.dart';
-import 'package:flutter_ui_challenges/coffee_app/widgets/coffee_app_list_tile.dart';
 import 'package:flutter_ui_challenges/widgets/app_divider.dart';
 
-import '../../../utils/dimens.dart';
-import '../../../utils/gen/assets.gen.dart';
-import '../../../widgets/app_scaffold.dart';
-import '../../../widgets/user_profile_image_widget.dart';
+import '../../../../utils/dimens.dart';
+import '../../../../utils/gen/assets.gen.dart';
+import '../../../../widgets/app_scaffold.dart';
+import '../../../../widgets/user_profile_image_widget.dart';
+import '../../colors/colors.dart';
+import '../coffee_app_list_tile.dart';
 
 class ProfileTab extends StatelessWidget {
   const ProfileTab({super.key});

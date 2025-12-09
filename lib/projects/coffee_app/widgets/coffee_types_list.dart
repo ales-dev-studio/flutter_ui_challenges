@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../../utils/dimens.dart';
-import '../../utils/gen/assets.gen.dart';
+import '../../../utils/dimens.dart';
+import '../../../utils/gen/assets.gen.dart';
 import '../colors/colors.dart';
 
 class CoffeeTypesList extends StatelessWidget {

@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 
-import '../../utils/dimens.dart';
-import '../../utils/gen/assets.gen.dart';
-import '../../widgets/app_svg_viewer.dart';
+import '../../../utils/dimens.dart';
+import '../../../utils/gen/assets.gen.dart';
+import '../../../widgets/app_svg_viewer.dart';
+
 
 class CoffeeAppListTile extends StatelessWidget {
   const CoffeeAppListTile({

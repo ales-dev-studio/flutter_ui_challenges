@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_ui_challenges/coffee_app/screens/splash_screen.dart';
+import 'package:flutter_ui_challenges/projects/coffee_app/screens/splash_screen.dart';
 import 'package:flutter_ui_challenges/utils/app_navigator.dart';
 import 'package:flutter_ui_challenges/utils/dimens.dart';
 import 'package:flutter_ui_challenges/widgets/bordered_container.dart';
