@@ -18,6 +18,7 @@ dependencies:
   salomon_bottom_bar: ^3.3.2
   carousel_slider: ^5.0.0
   animate_do: ^4.2.0
+  fl_chart: 1.0.0
 
 dev_dependencies:
   build_runner: ^2.4.15
