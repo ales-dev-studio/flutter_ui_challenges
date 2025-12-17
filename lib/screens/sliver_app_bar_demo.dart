@@ -13,18 +13,23 @@ class SliverAppBarDemo extends StatelessWidget {
           SliverAppBar(
             floating: false,
             pinned: true,
-            leading: IconButton(onPressed: () {}, icon: Icon(Icons.menu)),
+            leading: IconButton(onPressed: () {}, icon: Icon(Icons.menu,color: Colors.white)),
             actions: [
-              IconButton(onPressed: () {}, icon: Icon(Icons.more_vert)),
+              IconButton(onPressed: () {}, icon: Icon(Icons.more_vert,color: Colors.white)),
             ],
             // title: Text('Sliver AppBar'),
-            expandedHeight: 300,
+            backgroundColor: Colors.deepPurpleAccent,
+
+            expandedHeight: 200,
             flexibleSpace: FlexibleSpaceBar(
-              background: Image.network(
-                'https://picsum.photos/id/85/600/600',
-                fit: BoxFit.fitWidth,
+              // background: Image.network(
+              //   'https://picsum.photos/id/85/600/600',
+              //   fit: BoxFit.fitWidth,
+              // ),
+              title: Text(
+                'Sliver AppBar',
+                style: TextStyle(color: Colors.white),
               ),
-              title: Text('Sliver AppBar'),
             ),
           ),
 

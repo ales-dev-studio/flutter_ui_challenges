@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_ui_challenges/screens/sliver_app_bar_demo.dart';
+import 'package:flutter_ui_challenges/screens/wallet_screen.dart';
 
 import '../projects/coffee_app/screens/splash_screen.dart';
 import '../utils/app_navigator.dart';
@@ -46,7 +47,7 @@ class ProjectsListScreen extends StatelessWidget {
             _ListTile(
               title: 'Wallet screen with Slivers',
               onTap: () {
-                appPush(context, SplashScreen());
+                appPush(context, WalletScreen());
               },
               icon: Icons.wallet,
             ),
