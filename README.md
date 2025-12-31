@@ -8,7 +8,12 @@ flutter pub get
 flutter run
 ```
 
-## #1 ☕ Coffee App UI
+## 💰 Wallet screen using slivers
+
+![Demo](https://github.com/ales-dev-studio/flutter_ui_challenges/blob/main/assets/demos/Wallet%20Screen%20Demo.jpg)
+
+
+## ☕ Coffee App UI
 
 ![Demo](https://github.com/ales-dev-studio/flutter_ui_challenges/blob/main/assets/demos/Coffee%20App%20Demo.jpg)
 
