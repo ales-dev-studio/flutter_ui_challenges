@@ -63,6 +63,24 @@ class ShowCaseDemoScreen extends StatelessWidget {
           ),
         ),
       ),
+      floatingActionButton: Row(
+        mainAxisAlignment: MainAxisAlignment.end,
+        spacing: Dimens.largePadding,
+        children: [
+          FloatingActionButton.extended(
+            onPressed: () {},
+            label: Text('Send', style: TextStyle(color: Colors.white)),
+            icon: Icon(Icons.call_made, color: Colors.white),
+            backgroundColor: Colors.deepOrange,
+          ),
+          FloatingActionButton.extended(
+            onPressed: () {},
+            label: Text('Receive', style: TextStyle(color: Colors.white)),
+            icon: Icon(Icons.call_received, color: Colors.white),
+            backgroundColor: Colors.deepOrange,
+          ),
+        ],
+      ),
     );
   }
 }
