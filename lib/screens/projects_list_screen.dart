@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_ui_challenges/screens/show_case_demo_screen.dart';
 import 'package:flutter_ui_challenges/screens/sliver_app_bar_demo.dart';
 import 'package:flutter_ui_challenges/screens/wallet_screen.dart';
 
@@ -6,7 +7,6 @@ import '../projects/coffee_app/screens/splash_screen.dart';
 import '../utils/app_navigator.dart';
 import '../utils/dimens.dart';
 import '../widgets/bordered_container.dart';
-
 
 class ProjectsListScreen extends StatelessWidget {
   const ProjectsListScreen({super.key});
@@ -32,7 +32,6 @@ class ProjectsListScreen extends StatelessWidget {
               },
               icon: Icons.coffee_outlined,
             ),
-
             Text(
               'Screens',
               style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
@@ -50,6 +49,13 @@ class ProjectsListScreen extends StatelessWidget {
                 appPush(context, WalletScreen());
               },
               icon: Icons.wallet,
+            ),
+            _ListTile(
+              title: 'Show case demo',
+              onTap: () {
+                appPush(context, ShowCaseDemoScreen());
+              },
+              icon: Icons.interests_outlined,
             ),
           ],
         ),
