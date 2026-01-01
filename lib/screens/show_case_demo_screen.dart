@@ -1,5 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_ui_challenges/utils/dimens.dart';
+import 'package:flutter_ui_challenges/utils/sized_context.dart';
+import 'package:showcaseview/showcaseview.dart';
+
+GlobalKey menuShowcaseKey = GlobalKey();
+GlobalKey profileShowcaseKey = GlobalKey();
+GlobalKey bankCardShowcaseKey = GlobalKey();
+GlobalKey transactionsShowcaseKey = GlobalKey();
+GlobalKey sendFabShowcaseKey = GlobalKey();
+GlobalKey receiveFabShowcaseKey = GlobalKey();
 
 class ShowCaseDemoScreen extends StatefulWidget {
   const ShowCaseDemoScreen({super.key});
@@ -9,6 +18,69 @@ class ShowCaseDemoScreen extends StatefulWidget {
 }
 
 class _ShowCaseDemoScreenState extends State<ShowCaseDemoScreen> {
+  @override
+  void initState() {
+    super.initState();
+    ShowcaseView.register(
+      autoPlayDelay: const Duration(seconds: 3),
+      globalFloatingActionWidget:
+          (showcaseContext) => FloatingActionWidget(
+            left: 16,
+            bottom: 16,
+            child: Padding(
+              padding: const EdgeInsets.all(Dimens.largePadding),
+              child: ElevatedButton(
+                onPressed: () => ShowcaseView.get().dismiss(),
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.deepOrange,
+                ),
+                child: Row(
+                  spacing: Dimens.padding,
+                  children: [
+                    Icon(Icons.close, color: Colors.white),
+                    const Text('Close', style: TextStyle(color: Colors.white)),
+                  ],
+                ),
+              ),
+            ),
+          ),
+      globalTooltipActions: [
+        TooltipActionButton(
+          type: TooltipDefaultActionType.previous,
+          textStyle: const TextStyle(color: Colors.white),
+          backgroundColor: Colors.deepOrange,
+          hideActionWidgetForShowcase: [menuShowcaseKey],
+        ),
+        TooltipActionButton(
+          type: TooltipDefaultActionType.next,
+          textStyle: const TextStyle(color: Colors.white),
+          backgroundColor: Colors.deepOrange,
+          hideActionWidgetForShowcase: [receiveFabShowcaseKey],
+        ),
+      ],
+      onStart: (index, key) {},
+      onComplete: (index, key) {},
+      onDismiss: (key) {},
+      onFinish: (){},
+    );
+
+    WidgetsBinding.instance.addPostFrameCallback(
+      (_) => ShowcaseView.get().startShowCase([
+        menuShowcaseKey,
+        profileShowcaseKey,
+        bankCardShowcaseKey,
+        transactionsShowcaseKey,
+        sendFabShowcaseKey,
+        receiveFabShowcaseKey,
+      ]),
+    );
+  }
+
+  @override
+  void dispose() {
+    ShowcaseView.get().unregister();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -27,14 +99,30 @@ class _ShowCaseDemoScreenState extends State<ShowCaseDemoScreen> {
             ),
           ],
         ),
-        leading: IconButton(
-          onPressed: () {},
-          icon: Icon(Icons.menu, color: Colors.deepOrange),
+        leading: AppShowCaseWidget(
+          globalKey: menuShowcaseKey,
+          title: 'Main Menu',
+          description:
+              'Access all core features and navigation options from one place, '
+              'Use the menu to move through the app effortlessly.',
+          progressValue: 0.16,
+          child: IconButton(
+            onPressed: () {},
+            icon: Icon(Icons.menu, color: Colors.deepOrange),
+          ),
         ),
         actions: [
-          IconButton(
-            onPressed: () {},
-            icon: Icon(Icons.account_circle_outlined, color: Colors.deepOrange),
+          AppShowCaseWidget(
+            globalKey: profileShowcaseKey,
+            title: 'Your Profile',
+            description:
+            'Manage your personal details, preferences, and security settings, '
+                'Keep your account information always up to date.',
+            progressValue: 0.32,
+            child: IconButton(
+              onPressed: () {},
+              icon: Icon(Icons.account_circle_outlined, color: Colors.deepOrange),
+            ),
           ),
         ],
       ),
@@ -59,21 +147,30 @@ class _ShowCaseDemoScreenState extends State<ShowCaseDemoScreen> {
                         fontSize: 18,
                       ),
                     ),
-                    InkWell(
-                      onTap: () {},
-                      borderRadius: BorderRadius.circular(Dimens.corners),
-                      child: Padding(
-                        padding: EdgeInsets.symmetric(
-                          horizontal: Dimens.largePadding,
-                          vertical: Dimens.padding,
-                        ),
-                        child: Row(
-                          children: [
-                            Text(
-                              'Manage',
-                              style: TextStyle(color: Colors.deepOrange),
-                            ),
-                          ],
+                    AppShowCaseWidget(
+                      globalKey: bankCardShowcaseKey,
+                      title: 'Bank Card',
+                      description:
+                      'View your bank card details at a glance, '
+                          'Check your current balance and card status anytime, '
+                          'Stay in control of your card activity.',
+                      progressValue: 0.48,
+                      child: InkWell(
+                        onTap: () {},
+                        borderRadius: BorderRadius.circular(Dimens.corners),
+                        child: Padding(
+                          padding: EdgeInsets.symmetric(
+                            horizontal: Dimens.largePadding,
+                            vertical: Dimens.padding,
+                          ),
+                          child: Row(
+                            children: [
+                              Text(
+                                'Manage',
+                                style: TextStyle(color: Colors.deepOrange),
+                              ),
+                            ],
+                          ),
                         ),
                       ),
                     ),
@@ -107,21 +204,30 @@ class _ShowCaseDemoScreenState extends State<ShowCaseDemoScreen> {
                         fontSize: 18,
                       ),
                     ),
-                    InkWell(
-                      onTap: () {},
-                      borderRadius: BorderRadius.circular(Dimens.corners),
-                      child: Padding(
-                        padding: EdgeInsets.symmetric(
-                          horizontal: Dimens.largePadding,
-                          vertical: Dimens.padding,
-                        ),
-                        child: Row(
-                          children: [
-                            Text(
-                              'See all',
-                              style: TextStyle(color: Colors.deepOrange),
-                            ),
-                          ],
+                    AppShowCaseWidget(
+                      globalKey: transactionsShowcaseKey,
+                      title: 'Recent transactions',
+                      description:
+                      'See all your incoming and outgoing transactions in one place, '
+                          'Track payment details and timestamps easily, '
+                          'Keep a clear record of your financial activity.',
+                      progressValue: 0.65,
+                      child: InkWell(
+                        onTap: () {},
+                        borderRadius: BorderRadius.circular(Dimens.corners),
+                        child: Padding(
+                          padding: EdgeInsets.symmetric(
+                            horizontal: Dimens.largePadding,
+                            vertical: Dimens.padding,
+                          ),
+                          child: Row(
+                            children: [
+                              Text(
+                                'See all',
+                                style: TextStyle(color: Colors.deepOrange),
+                              ),
+                            ],
+                          ),
                         ),
                       ),
                     ),
@@ -137,22 +243,102 @@ class _ShowCaseDemoScreenState extends State<ShowCaseDemoScreen> {
         mainAxisAlignment: MainAxisAlignment.end,
         spacing: Dimens.largePadding,
         children: [
-          FloatingActionButton.extended(
-            heroTag: 'SendFab',
-            onPressed: () {},
-            label: Text('Send', style: TextStyle(color: Colors.white)),
-            icon: Icon(Icons.call_made, color: Colors.white),
-            backgroundColor: Colors.deepOrange,
+          AppShowCaseWidget(
+            globalKey: sendFabShowcaseKey,
+            title: 'Send Money',
+            description:
+            'Send money quickly with just a few taps.\n'
+                'Fast, secure, and simple transfers.',
+            progressValue: 0.8,
+            child: FloatingActionButton.extended(
+              heroTag: 'SendFab',
+              onPressed: () {},
+              label: Text('Send', style: TextStyle(color: Colors.white)),
+              icon: Icon(Icons.call_made, color: Colors.white),
+              backgroundColor: Colors.deepOrange,
+            ),
           ),
-          FloatingActionButton.extended(
-            heroTag: 'ReceiveFab',
-            onPressed: () {},
-            label: Text('Receive', style: TextStyle(color: Colors.white)),
-            icon: Icon(Icons.call_received, color: Colors.white),
-            backgroundColor: Colors.deepOrange,
+          AppShowCaseWidget(
+            globalKey: receiveFabShowcaseKey,
+            title: 'Receive Money',
+            description:
+            'Receive or request money instantly from others.\n'
+                'All incoming funds appear here.',
+            progressValue: 1.0,
+            child: FloatingActionButton.extended(
+              heroTag: 'ReceiveFab',
+              onPressed: () {},
+              label: Text('Receive', style: TextStyle(color: Colors.white)),
+              icon: Icon(Icons.call_received, color: Colors.white),
+              backgroundColor: Colors.deepOrange,
+            ),
           ),
         ],
       ),
+    );
+  }
+}
+
+class AppShowCaseWidget extends StatelessWidget {
+  const AppShowCaseWidget({
+    super.key,
+    required this.globalKey,
+    required this.title,
+    required this.description,
+    required this.progressValue,
+    required this.child,
+  });
+
+  final GlobalKey globalKey;
+  final String title;
+  final String description;
+  final double progressValue;
+  final Widget child;
+
+  @override
+  Widget build(BuildContext context) {
+    return Showcase.withWidget(
+      key: globalKey,
+      targetShapeBorder: const CircleBorder(),
+      disableBarrierInteraction: true,
+      targetPadding: EdgeInsets.all(30),
+      overlayOpacity: 0.4,
+      targetBorderRadius: BorderRadius.circular(50),
+      container: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Container(
+            width: context.widthPx,
+            padding: const EdgeInsets.all(Dimens.largePadding),
+            decoration: BoxDecoration(
+              color: Theme.of(context).scaffoldBackgroundColor,
+              borderRadius: BorderRadius.circular(Dimens.corners),
+            ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              spacing: Dimens.padding,
+              children: [
+                Text(
+                  title,
+                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                ),
+                Text(description),
+                SizedBox(height: Dimens.largePadding),
+                LinearProgressIndicator(
+                  borderRadius: BorderRadius.circular(Dimens.corners),
+                  value: progressValue,
+                  minHeight: 7,
+                  color: Colors.deepOrange,
+                  backgroundColor: Colors.deepOrange.withValues(alpha: 0.2),
+                ),
+                SizedBox.shrink(),
+              ],
+            ),
+          ),
+        ],
+      ),
+      child: child,
     );
   }
 }
