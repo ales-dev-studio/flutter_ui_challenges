@@ -1,8 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_ui_challenges/utils/dimens.dart';
 
-class ShowCaseDemoScreen extends StatelessWidget {
+class ShowCaseDemoScreen extends StatefulWidget {
   const ShowCaseDemoScreen({super.key});
+
+  @override
+  State<ShowCaseDemoScreen> createState() => _ShowCaseDemoScreenState();
+}
+
+class _ShowCaseDemoScreenState extends State<ShowCaseDemoScreen> {
 
   @override
   Widget build(BuildContext context) {
