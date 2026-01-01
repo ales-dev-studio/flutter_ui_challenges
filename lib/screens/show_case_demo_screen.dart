@@ -37,10 +37,42 @@ class ShowCaseDemoScreen extends StatelessWidget {
         child: SingleChildScrollView(
           child: Column(
             children: [
-              TitleWidget(
-                title: 'Your bank card',
-                actionTitle: 'Manage',
-                onActionTap: () {},
+              Padding(
+                padding: EdgeInsets.only(
+                  left: Dimens.largePadding,
+                  right: Dimens.largePadding,
+                  top: Dimens.padding,
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      'Bank card',
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 18,
+                      ),
+                    ),
+                    InkWell(
+                      onTap: () {},
+                      borderRadius: BorderRadius.circular(Dimens.corners),
+                      child: Padding(
+                        padding: EdgeInsets.symmetric(
+                          horizontal: Dimens.largePadding,
+                          vertical: Dimens.padding,
+                        ),
+                        child: Row(
+                          children: [
+                            Text(
+                              'Manage',
+                              style: TextStyle(color: Colors.deepOrange),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
               ),
               Padding(
                 padding: const EdgeInsets.all(Dimens.largePadding),
@@ -53,10 +85,42 @@ class ShowCaseDemoScreen extends StatelessWidget {
                   ),
                 ),
               ),
-              TitleWidget(
-                title: 'Recent transactions',
-                actionTitle: 'See all',
-                onActionTap: () {},
+              Padding(
+                padding: EdgeInsets.only(
+                  left: Dimens.largePadding,
+                  right: Dimens.largePadding,
+                  top: Dimens.padding,
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      'Recent transactions',
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 18,
+                      ),
+                    ),
+                    InkWell(
+                      onTap: () {},
+                      borderRadius: BorderRadius.circular(Dimens.corners),
+                      child: Padding(
+                        padding: EdgeInsets.symmetric(
+                          horizontal: Dimens.largePadding,
+                          vertical: Dimens.padding,
+                        ),
+                        child: Row(
+                          children: [
+                            Text(
+                              'See all',
+                              style: TextStyle(color: Colors.deepOrange),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
               ),
               TransactionsList(),
             ],
@@ -68,12 +132,14 @@ class ShowCaseDemoScreen extends StatelessWidget {
         spacing: Dimens.largePadding,
         children: [
           FloatingActionButton.extended(
+            heroTag: 'SendFab',
             onPressed: () {},
             label: Text('Send', style: TextStyle(color: Colors.white)),
             icon: Icon(Icons.call_made, color: Colors.white),
             backgroundColor: Colors.deepOrange,
           ),
           FloatingActionButton.extended(
+            heroTag: 'ReceiveFab',
             onPressed: () {},
             label: Text('Receive', style: TextStyle(color: Colors.white)),
             icon: Icon(Icons.call_received, color: Colors.white),
@@ -177,63 +243,6 @@ class _CardInfo extends StatelessWidget {
           ),
         ),
       ],
-    );
-  }
-}
-
-class TitleWidget extends StatelessWidget {
-  const TitleWidget({
-    super.key,
-    required this.title,
-    this.actionTitle,
-    this.onActionTap,
-  });
-
-  final String title;
-  final String? actionTitle;
-  final GestureTapCallback? onActionTap;
-
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.only(
-        left: Dimens.largePadding,
-        right: Dimens.largePadding,
-        top: Dimens.padding,
-      ),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Row(
-            spacing: Dimens.largePadding,
-            children: [
-              Text(
-                title,
-                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
-              ),
-            ],
-          ),
-          if (actionTitle != null)
-            InkWell(
-              onTap: onActionTap,
-              borderRadius: BorderRadius.circular(Dimens.corners),
-              child: Padding(
-                padding: EdgeInsets.symmetric(
-                  horizontal: Dimens.largePadding,
-                  vertical: Dimens.padding,
-                ),
-                child: Row(
-                  children: [
-                    Text(
-                      actionTitle ?? '',
-                      style: TextStyle(color: Colors.deepOrange),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-        ],
-      ),
     );
   }
 }

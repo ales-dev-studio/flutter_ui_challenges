@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_ui_challenges/screens/projects_list_screen.dart';
+import 'package:flutter_ui_challenges/screens/show_case_demo_screen.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 void main() {
@@ -28,7 +28,7 @@ class MyApp extends StatelessWidget {
         scaffoldBackgroundColor: Colors.white,
       ),
       debugShowCheckedModeBanner: false,
-      home: const ProjectsListScreen(),
+      home: const ShowCaseDemoScreen(),
     );
   }
 }
