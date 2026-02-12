@@ -7,6 +7,7 @@ import '../projects/coffee_app/screens/splash_screen.dart';
 import '../utils/app_navigator.dart';
 import '../utils/dimens.dart';
 import '../widgets/bordered_container.dart';
+import 'new_flutter_widgets.dart';
 
 class ProjectsListScreen extends StatelessWidget {
   const ProjectsListScreen({super.key});
@@ -54,6 +55,13 @@ class ProjectsListScreen extends StatelessWidget {
               title: 'Show case demo',
               onTap: () {
                 appPush(context, ShowCaseDemoScreen());
+              },
+              icon: Icons.interests_outlined,
+            ),
+            _ListTile(
+              title: 'Flutter new widgets gallery',
+              onTap: () {
+                appPush(context, FlutterNewWidgets());
               },
               icon: Icons.interests_outlined,
             ),
