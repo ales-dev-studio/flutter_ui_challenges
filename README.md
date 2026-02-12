@@ -8,6 +8,11 @@ flutter pub get
 flutter run
 ```
 
+## ✨ 10 New Flutter Widgets 
+
+![Demo](https://github.com/ales-dev-studio/flutter_ui_challenges/blob/main/assets/demos/10%20New%20Flutter%20Widgets%20Demo.jpg)
+
+
 ## ✨ Showcase 
 
 ![Demo](https://github.com/ales-dev-studio/flutter_ui_challenges/blob/main/assets/demos/Showcase%20Demo.jpg)
